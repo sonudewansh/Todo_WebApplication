@@ -8,7 +8,7 @@
     const password = document.getElementById("password").value;
 
     try {
-        const response = await fetch("http://localhost:5173/api/login", {
+        const response = await fetch("https://todo-nodejs-svelte-mongodb.vercel.app/api/login", {
             method: "POST",
             body: JSON.stringify({
                 Username: username,

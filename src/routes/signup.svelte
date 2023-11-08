@@ -12,7 +12,7 @@
     const handleSubmitBtn = async () => {
     if (Firstname && Lastname && Username && Password ) {
         try {
-            const response = await fetch("http://localhost:5173/api/sign-up", {
+            const response = await fetch("https://todo-nodejs-svelte-mongodb.vercel.app/api/sign-up", {
                 method: "POST",
                 body: JSON.stringify({
                     Firstname,

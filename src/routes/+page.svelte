@@ -18,7 +18,7 @@
   let title = "";
   $: console.log("Title: ",title);  
   const handleAddTodoBtn = async() => {
-      fetch("http://localhost:5173/api/add-todo", {
+      fetch("https://todo-nodejs-svelte-mongodb.vercel.app/api/add-todo", {
           method:"POST",
           body:JSON.stringify({
               title,    //Inserting data into title = ""
@@ -35,7 +35,7 @@
 
   //Fetching get-todo
   const getTodo = () => {
-  fetch("http://localhost:5173/api/get-todo")
+  fetch("https://todo-nodejs-svelte-mongodb.vercel.app/api/get-todo")
     .then((res) => res.json())
     .then((data) => {
       console.log("Data: ", data);
@@ -47,7 +47,7 @@
 
   //Fetching delete-todo
   const handleDeleteTodoBtn = (id) => {
-  fetch("http://localhost:5173/api/delete-todo", {
+  fetch("https://todo-nodejs-svelte-mongodb.vercel.app/api/delete-todo", {
     method: "POST",
     body: JSON.stringify({
       id: id,
@@ -72,7 +72,7 @@
   title = todo.title;   //After clicking on Edit data will move to input placeholder
   };
   const haneleEditSubmitBtnClick = () => {
-  fetch("http://localhost:5173/api/edit-todo", {
+  fetch("https://todo-nodejs-svelte-mongodb.vercel.app/api/edit-todo", {
     method: "POST",
     body: JSON.stringify({
       id: editTodoId,
