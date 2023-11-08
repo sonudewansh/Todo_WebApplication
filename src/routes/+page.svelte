@@ -4,6 +4,18 @@
   import Signup from './signup.svelte';
   import Login from './login/login.svelte';
   import Dashboard from './dashboard.svelte';
+
+  export const load = async ({ fetch }) => {
+	const res = await fetch('https://httpbin.org/json');
+	console.log(res);
+
+	const data = await res.json();
+
+	return { data };
+};
+
+export const prerender = true;
+
   
 
   onMount(() => {
