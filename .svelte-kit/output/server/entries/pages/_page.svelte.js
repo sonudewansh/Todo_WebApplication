@@ -19,7 +19,7 @@ const Dashboard = create_ssr_component(($$result, $$props, $$bindings, slots) =>
   let todos;
   let title = "";
   const getTodo = () => {
-    fetch("https://todo-nodejs-svelte-mongodb.vercel.app/api/get-todo").then((res) => res.json()).then((data) => {
+    fetch("https://mytodo-git-master-sonudewanshs-projects.vercel.app/api/get-todo").then((res) => res.json()).then((data) => {
       console.log("Data: ", data);
       todos = data;
     });
@@ -36,21 +36,11 @@ const Dashboard = create_ssr_component(($$result, $$props, $$bindings, slots) =>
 });
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let mypage;
-  let title = "";
-  const getTodo = () => {
-    fetch("https://todo-nodejs-svelte-mongodb.vercel.app/api/get-todo").then((res) => res.json()).then((data) => {
-      console.log("Data: ", data);
-    });
-  };
-  getTodo();
   const handleStateChange = (data) => {
     console.log(data);
     mypage = data;
   };
   mypage = "LOADING";
-  {
-    console.log("Title: ", title);
-  }
   return `<main>${mypage === "LOADING" ? `<h1 data-svelte-h="svelte-v881eu">loading...</h1>` : `${mypage === "SIGN_UP" ? `${validate_component(Signup, "Signup").$$render($$result, { changeState: handleStateChange }, {}, {})}` : `${mypage === "LOGIN" ? `${validate_component(Login, "Login").$$render($$result, { changeState: handleStateChange }, {}, {})}` : `${validate_component(Dashboard, "Dashboard").$$render($$result, {}, {}, {})}`}`}`}</main>`;
 });
 export {
