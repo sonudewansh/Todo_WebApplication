@@ -8,7 +8,7 @@ export async function POST({ request }) {
     const db = client.db("sveltekit_db"); // 'todo_signup_login_registration' is the name of the database in MongoDB
 
     // Access the collection
-    const collection = db.collection("auth"); // 'register' is the name of the collection in MongoDB
+    const collection = db.collection("register"); // 'register' is the name of the collection in MongoDB
     const requestData = await request.json();
 
     const {Username, Password} = requestData
