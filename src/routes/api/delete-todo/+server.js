@@ -8,10 +8,10 @@ export async function POST({request}) {
     const client = await dbClient
 
     //Connection with database
-    const db = client.db("todo_signup_login")
+    const db = client.db("sveltekit_db")
 
     //Connection with collection
-    const collection = db.collection("todo")
+    const collection = db.collection("todos")
 
     //Taking id bcz, it is unique
     const {id} = await request.json()  

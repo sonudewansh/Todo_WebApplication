@@ -65,8 +65,8 @@ export async function POST({request}) {
 
     const client = await dbClient
     
-    const db = client.db("todo_signup_login")
-    const collection = db.collection("todo")
+    const db = client.db("sveltekit_db")
+    const collection = db.collection("todos")
 
     const {title} = await request.json()
     console.log("Title:", title);
