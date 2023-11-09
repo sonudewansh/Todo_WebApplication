@@ -14,7 +14,7 @@
   let title = "";
   $: console.log("Title: ",title);  
   const handleAddTodoBtn = async() => {
-      fetch("https://todossd.vercel.app/api/add-todo", {
+      fetch("https://todoauth11.vercel.app/api/add-todo", {
           method:"POST",
           body:JSON.stringify({
               title,    //Inserting data into title = ""
@@ -31,7 +31,7 @@
 
   //Fetching get-todo
   const getTodo = () => {
-  fetch("https://todossd.vercel.app/api/get-todo")
+  fetch("https://todoauth11.vercel.app/api/get-todo")
     .then((res) => res.json())
     .then((data) => {
       console.log("Data: ", data);
@@ -43,7 +43,7 @@
 
   //Fetching delete-todo
   const handleDeleteTodoBtn = (id) => {
-  fetch("https://todossd.vercel.app/api/delete-todo", {
+  fetch("https://todoauth11.vercel.app/api/delete-todo", {
     method: "POST",
     body: JSON.stringify({
       id: id,
@@ -70,7 +70,7 @@
 
 
   const haneleEditSubmitBtnClick = () => {
-  fetch("https://todossd.vercel.app/api/edit-todo", {
+  fetch("https://todoauth11.vercel.app/api/edit-todo", {
     method: "POST",
     body: JSON.stringify({
       id: editTodoId,
