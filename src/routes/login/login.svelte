@@ -1,14 +1,15 @@
 <script>
   import { setData } from "../../helper/localstorage";
+  import { LOGIN } from '../../config'
 
   export let changeState 
-
+  console.log(LOGIN());
   const handleLoginBtn = async () => {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
     try {
-        const response = await fetch("https://todoauth11.vercel.app/api/login", {
+        const response = await fetch(LOGIN(), {
             method: "POST",
             body: JSON.stringify({
                 Username: username,

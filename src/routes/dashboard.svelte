@@ -1,6 +1,11 @@
 <script>
   import { onMount } from 'svelte';
   import { deleteData, getData, setData } from '../helper/localstorage';    //importing getData and setData from helper folder
+  import { ADD_TODO } from "../config";
+  import { DELETE_TODO } from "../config";
+  import { EDIT_TODO } from "../config";
+  import { GET_TODO } from "../config";
+  
   
 
   onMount(() => {
@@ -12,9 +17,8 @@
 
   //Fetching add-todo
   let title = "";
-  $: console.log("Title: ",title);  
   const handleAddTodoBtn = async() => {
-      fetch("https://todoauth11.vercel.app/api/add-todo", {
+      fetch(ADD_TODO, {
           method:"POST",
           body:JSON.stringify({
               title,    //Inserting data into title = ""
@@ -31,7 +35,7 @@
 
   //Fetching get-todo
   const getTodo = () => {
-  fetch("https://todoauth11.vercel.app/api/get-todo")
+  fetch(GET_TODO)
     .then((res) => res.json())
     .then((data) => {
       console.log("Data: ", data);
@@ -43,7 +47,7 @@
 
   //Fetching delete-todo
   const handleDeleteTodoBtn = (id) => {
-  fetch("https://todoauth11.vercel.app/api/delete-todo", {
+  fetch(DELETE_TODO, {
     method: "POST",
     body: JSON.stringify({
       id: id,
@@ -70,7 +74,7 @@
 
 
   const haneleEditSubmitBtnClick = () => {
-  fetch("https://todoauth11.vercel.app/api/edit-todo", {
+  fetch(EDIT_TODO, {
     method: "POST",
     body: JSON.stringify({
       id: editTodoId,

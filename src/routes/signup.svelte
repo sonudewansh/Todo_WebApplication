@@ -1,5 +1,6 @@
 <script>
   import { setData } from "../helper/localstorage";
+  import { SIGNUP } from "../config";
 
   export let changeState 
   
@@ -12,7 +13,7 @@
     const handleSubmitBtn = async () => {
     if (Firstname && Lastname && Username && Password ) {
         try {
-            const response = await fetch("https://todoauth11.vercel.app/api/sign-up", {
+            const response = await fetch(SIGNUP , {
                 method: "POST",
                 body: JSON.stringify({
                     Firstname,
