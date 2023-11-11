@@ -103,11 +103,13 @@ const handleLogout=()=>{
 
 </script>
 
+
+
 <main>
   <div class="flex justify-end">
     <button on:click={()=>handleLogout("LOGIN")} class="rounded-md text-blue-900 text-center sm:text-left sm:text-lg md:text-xl lg:text-2xl sm:pt-1 mt-1 px-1 border-2 lg:pb-1 mr-1 border-sky-900">Logout</button>
   </div>
-    <div class="mx-1 pt-[40px] lg:m-[10px] lg:p-[20px]">
+  <div class="mx-1 pt-[40px] lg:m-[10px] lg:p-[20px]">
       <p class="text-center text-blue-900 font-bold text-[40px] underline decoration-solid decoration-sky-500">ToDo List</p>
       <div class="flex justify-center mt-20">
           <p class="rounded-md text-blue-900 font-bold text-center sm:text-left sm:text-lg md:text-xl lg:text-2xl sm:pt-1 pt-1 mr-3 border-2 px-2 border-sky-500">Enter your List</p>
@@ -133,4 +135,3 @@ const handleLogout=()=>{
       </div>
   {/each}
 </main>
-
